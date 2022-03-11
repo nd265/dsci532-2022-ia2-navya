@@ -4,8 +4,8 @@ library(tidyverse)
 library(plotly)
 app <- Dash$new(external_stylesheets = dbcThemes$BOOTSTRAP)
 
-df <- read_csv("gapminder.csv") %>% drop_na()
-ci <- read_csv('country_iso.csv')
+df <- read_csv("data/gapminder.csv") %>% drop_na()
+ci <- read_csv('data/country_iso.csv')
 df <- merge(df, ci, by = 'country')
 
 year_range <- seq(min(df$year), max(df$year),5)
